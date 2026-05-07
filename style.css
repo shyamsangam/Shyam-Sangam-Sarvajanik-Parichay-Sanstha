@@ -1,0 +1,594 @@
+html { scroll-behavior: smooth; }
+.nav-links a { color: white; text-decoration: none; font-size: 1.2em; font-weight: bold; }
+/* Baki jo CSS pehle di thi wo sab isme rehne dein */
+
+/* Puri website ka base style */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #eef2f3;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header ka blue background aur gold text */
+.main-header {
+    background-color: #003366; /* Dark Blue */
+    color: #FFD700; /* Gold */
+    padding: 30px 10px;
+    text-align: center;
+    border-bottom: 6px solid #FFD700;
+}
+
+.reg-info { font-size: 1.9em; opacity: 0.9; }
+.main-title { margin: 10px 0; font-size: 4.5em; }
+.location { margin: 5px 0; font-size: 2.5em; }
+/* Safed rang ke boxes (Sections) */
+.event-card, .bank-details {
+    background: white;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.highlight-red { color: #d9534f; }
+.event-name { color: #003366; font-size: 2em; }
+
+/* Contact wali yellow patti */
+.contact-box {
+    background: #ffcc00;
+    padding: 15px;
+    font-weight: bold;
+    border-radius: 8px;
+    margin-top: 20px;
+    font-size: 1.2em;
+}
+
+/* Footer (Niche ka address bar) */
+.main-footer {
+    background: #222;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+/* Navigation Bar Ka Design */
+.navbar {
+    background-color: #002244;
+    padding: 30px 50px;
+    display: flex;
+    justify-content: space-between; /* Isse teeno hisse (Left, Center, Right) alag ho jayenge */
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.nav-links a {
+    text-decoration: none;
+    color: white;             /* Text ka rang white karne ke liye */
+    font-weight: bold;
+    font-size: 1.2em;         /* Size thoda badhane ke liye (1.1 se 1.2 kiya) */
+    transition: 0.3s;
+    letter-spacing: 0.5px;    /* Isse har word thoda saaf dikhega */
+}
+
+.nav-links a:hover {
+    color: #FFD700;           /* Mouse le jane par wapas Gold ho jayega */
+}
+
+/* Center Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li { margin: 0 15px; }
+
+/* Right Buttons Style */
+.nav-auth {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.login-btn {
+    color: white;
+font-size: 1.2em;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.submit-btn {
+    background-color: #FFD700; /* Gold color */
+    color: #002244;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.submit-btn:hover {
+    background-color: white;
+    transform: scale(1.05); /* Thoda bada hoga hover par */
+}
+
+/* Mobile ke liye: agar screen choti ho toh gap adjust karein */
+.nav-left { width: 200px; } /* Ye center links ko dhakelne ke liye hai */
+@media (max-width: 768px) {
+    .nav-left { display: none; }
+}
+
+
+/* Photo Gallery Ka Design */
+.photo-gallery {
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.gallery-container {
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Photos ke beech ka gap */
+    flex-wrap: wrap; /* Mobile par apne aap niche aa jayengi */
+}
+
+.gallery-img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover; /* Photo stretch nahi hogi */
+    border-radius: 10px;
+    border: 3px solid #003366;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+/* About Description Style */
+.about-description {
+    background: #fff;
+    padding: 50px 20px;
+    max-width: 1000px;
+    margin: 30px auto;
+    border-left: 10px solid #003366; /* Blue vertical line for style */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.description-text p {
+    font-size: 1.1em;
+    color: #444;
+    text-align: justify;
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+/* Footer Columns Design */
+.footer-columns {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    background: #003366;
+    color: white;
+    padding: 40px 20px;
+    border-top: 5px solid #FFD700;
+}
+
+.column {
+    min-width: 150px;
+    margin-bottom: 20px;
+}
+
+.column h3 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #FFD700;
+    display: inline-block;
+}
+
+.column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.column ul li {
+    margin: 8px 0;
+}
+
+.column ul li a {
+    color: #ccc;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.column ul li a:hover {
+    color: #fff;
+    padding-left: 5px; /* Hover effect */
+}
+/* Modal (Background) */
+.modal {
+    display: none; /* Pehle chhupa rahega */
+    position: fixed;
+    z-index: 2000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Background dhundhla karne ke liye */
+    overflow: auto;
+}
+
+/* Modal Content Box */
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 30px;
+    width: 70%;
+    border-radius: 15px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute; right: 20px; top: 10px;
+    font-size: 30px; cursor: pointer; color: #cc0000;
+}
+
+.form-title { text-align: center; color: #003366; margin-bottom: 20px; border-bottom: 2px solid #FFD700; padding-bottom: 10px; }
+
+.form-group { display: flex; gap: 15px; margin-bottom: 15px; }
+.form-group input { flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+
+.full-width { width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; box-sizing: border-box; }
+
+.radio-group, .file-input { margin-bottom: 15px; text-align: left; background: #f9f9f9; padding: 10px; border-radius: 5px; }
+
+.final-submit-btn {
+    background: #003366; color: white; border: none; padding: 15px 30px;
+    font-size: 1.1em; border-radius: 5px; cursor: pointer; width: 100%;
+}
+.whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #25d366;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.2);
+    z-index: 3000;
+}
+
+.whatsapp-float img { width: 30px; }
+
+.whatsapp-float:hover {
+    background-color: #128c7e;
+    transform: scale(1.1);
+}
+/* Working Process Section */
+.working-process {
+    padding: 60px 20px;
+    background-color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    color: #003366;
+    font-size: 2.2em;
+    margin-bottom: 10px;
+}
+
+.section-subtitle {
+    color: #666;
+    margin-bottom: 40px;
+    font-style: italic;
+}
+
+.process-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap; /* Mobile friendly */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.step-card {
+    background: #fdfdfd;
+    border: 1px solid #eee;
+    padding: 30px;
+    width: 250px;
+    border-radius: 15px;
+    position: relative;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.step-card:hover {
+    transform: translateY(-10px); /* Upar uthega hover karne par */
+    border-color: #FFD700;
+}
+
+.step-number {
+    background: #FFD700;
+    color: #003366;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 1.2em;
+    margin: 0 auto 20px;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+}
+
+.step-card h3 {
+    color: #003366;
+    margin-bottom: 15px;
+}
+
+.step-card p {
+    font-size: 0.95em;
+    color: #555;
+    line-height: 1.5;
+}
+/* Matrimony Section Styling */
+.matrimony-section {
+    padding: 60px 20px;
+    background-color: #f0f4f8;
+    text-align: center;
+}
+
+/* Search Bar Design */
+.search-container {
+    background: #003366;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 900px;
+    margin: 0 auto 40px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.search-container select, .search-container input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+.search-btn {
+    background: #FFD700;
+    color: #003366;
+    border: none;
+    padding: 12px 25px;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Profile Cards Grid */
+.profile-grid {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.profile-card {
+    background: white;
+    width: 280px;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.profile-card:hover { transform: scale(1.02); }
+
+.profile-img-box {
+    background: #ddd;
+    height: 180px;
+}
+
+.profile-img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.profile-info { padding: 20px; text-align: left; }
+.profile-info h3 { color: #003366; margin: 0 0 10px 0; font-size: 1.2em; }
+.profile-info p { font-size: 0.9em; margin: 5px 0; color: #555; }
+
+.view-btn {
+    background: #003366;
+    color: white;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.faq-section { padding: 60px 20px; background: #f9f9f9; text-align: center; }
+
+.faq-container { max-width: 1200px; margin: 0 auto; text-align: left; }
+
+.faq-item { background: white; margin-bottom: 10px; border-radius: 8px; border: 1px solid #ddd; overflow: hidden; }
+
+.faq-question {
+    width: 100%; padding: 20px; background: none; border: none;
+    text-align: left; font-size: 1.1em; font-weight: bold; color: #003366;
+    cursor: pointer; display: flex; justify-content: space-between; align-items: center;
+}
+
+.faq-question:hover { background: #f0f4f8; }
+
+.faq-answer { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; background: #fff; }
+
+.faq-answer p { padding: 15px 0; color: #555; line-height: 1.6; border-top: 1px solid #eee; }
+
+/* Jab active ho toh answer dikhega */
+.faq-item.active .faq-answer { max-height: 200px; }
+.faq-item.active .icon { transform: rotate(45deg); color: #d9534f; }
+.payment-section {
+    padding: 40px 20px;
+    background: #003366; /* Deep Blue background */
+    color: white;
+    text-align: center;
+}
+
+.payment-card {
+    max-width: 500px;
+    margin: 0 auto;
+    border: 2px solid #FFD700;
+    padding: 30px;
+    border-radius: 15px;
+}
+
+.qr-placeholder {
+    background: white;
+    padding: 10px;
+    display: inline-block;
+    margin: 20px 0;
+    border-radius: 10px;
+}
+
+.bank-info {
+    font-size: 1.1em;
+    background: rgba(255, 215, 0, 0.2);
+    padding: 10px;
+    border-radius: 5px;
+}
+/* Stats Design */
+.stats-section {
+    background: #003366;
+    color: #FFD700;
+    padding: 50px 20px;
+    text-align: center;
+}
+.stats-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+.stat-item { margin: 20px; }
+.stat-number { font-size: 2.5em; margin-bottom: 5px; }
+.stat-item p { color: white; font-size: 1.1em; }
+
+/* Testimonials Design */
+.testimonials { padding: 60px 20px; background: #fff; text-align: center; }
+.testimonial-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+.testimonial-card {
+    background: #fdf9e9;
+    border: 1px solid #FFD700;
+    padding: 30px;
+    width: 350px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+.testimonial-card p { font-style: italic; color: #444; margin-bottom: 15px; }
+.testimonial-card h4 { color: #003366; }
+/* Caste Buttons */
+.caste-links { padding: 30px 20px; text-align: center; background: #fff; }
+.caste-buttons { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; margin-top: 15px; }
+.caste-btn {
+    padding: 10px 25px;
+    background: #f0f4f8;
+    color: #003366;
+    text-decoration: none;
+    border-radius: 25px;
+    border: 1px solid #003366;
+    font-weight: bold;
+    transition: 0.3s;
+}
+.caste-btn:hover { background: #003366; color: #FFD700; }
+
+/* Map Design */
+.location-map { padding: 60px 20px; text-align: center; background: #f9f9f9; }
+.map-container { max-width: 1000px; margin: 30px auto; border: 5px solid #fff; box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 15px; overflow: hidden; }
+.help-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 40px auto;
+    gap: 30px;
+    padding: 20px;
+    flex-wrap: wrap;
+}
+
+.contact-info-box {
+    flex: 1;
+    background: #003366;
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    min-width: 300px;
+}
+
+.contact-form-box {
+    flex: 1.5;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    min-width: 300px;
+}
+
+.help-input {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.submit-btn-help {
+    background: #FFD700;
+    color: #003366;
+    border: none;
+    padding: 15px;
+    width: 100%;
+    font-weight: bold;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1em;
+}
+
+.submit-btn-help:hover { background: #e6c300; }
+.social-links {
+    text-align: center;
+    padding: 20px;
+    background: #f1f1f1;
+}
+
+.social-icon {
+    display: inline-block;
+    margin: 0 10px;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.fb { background: #3b5998; }
+.insta { background: #e4405f; }
+.yt { background: #ff0000; }
+
+.social-icon:hover { opacity: 0.8; transform: scale(1.1); transition: 0.3s; }
