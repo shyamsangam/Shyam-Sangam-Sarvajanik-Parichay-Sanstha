@@ -33,23 +33,112 @@
     
     <!-- Quick Search Bar -->
     <div class="search-container">
-        <select>
-            <option>लिंग चुनें</option>
-            <option>लड़का</option>
-            <option>लड़की</option>
-        </select>
+      <select id="genderSelect">
+    <option value="all">लिंग चुनें</option>
+    <option value="male">लड़का</option>
+    <option value="female">लड़की</option>
+</select>
+
         <select>
             <option>आयु चुनें</option>
             <option>18-25</option>
             <option>26-35</option>
             <option>35+</option>
         </select>
-        <input type="text" placeholder="शहर या जाति लिखें...">
-        <button class="search-btn">खोजें (Search)</button>
+        <input type="text" id="searchInput" placeholder="शिक्षा या जाति लिखें...">
+        <button class="search-btn" onclick="filterProfiles()">खोजें (Search)</button>
     </div>
 
     <!-- Profile Cards -->
     <div class="profile-grid">
+        <div class="profile-grid">
+    <!-- Asali Profile Example -->
+    <div class="profile-card"data-gender="male" data-edu="graduation">
+        <div class="profile-img-box">
+            <img src="#" alt="Profile Photo"> <!-- Apni koi bhi photo ka naam yahan likhein -->
+        </div>
+        <div class="profile-info">
+            <h3>प्रतीक जैन (ID: SS-201)</h3>
+            <p><strong>आयु:</strong> 28 वर्ष | <strong>ऊंचाई:</strong> 5'9"</p>
+            <p><strong>शिक्षा:</strong> MBA (Finance)</p>
+            <p><strong>व्यवसाय:</strong> बैंक मैनेजर, इंदौर</p>
+            <button class="view-btn" onclick="openForm()">संपर्क के लिए फॉर्म भरें</button>
+        </div>
+    </div>
+
+    <!-- Doosri Profile -->
+    <div class="profile-card">
+        <div class="profile-img-box">
+            <img src="#" alt="Profile Photo">
+        </div>
+        <div class="profile-info">
+            <h3>सपना अग्रवाल (ID: SS-202)</h3>
+            <p><strong>आयु:</strong> 25 वर्ष | <strong>ऊंचाई:</strong> 5'4"</p>
+            <p><strong>शिक्षा:</strong> M.Sc (Computer Science)</p>
+            <p><strong>व्यवसाय:</strong> सॉफ्टवेयर डेवलपर, पुणे</p>
+            <button class="view-btn" onclick="openForm()">संपर्क के लिए फॉर्म भरें</button>
+        </div>
+    </div>
+</div>
+<!-- Profile Card Example (Data from Image) -->
+<div class="profile-card" data-gender="female" data-edu="graduation">
+    <div class="profile-img-box">
+        <img src="https://placeholder.com" alt="Profile"> <!-- Photo baad mein badal sakte hain -->
+    </div>
+    <div class="profile-info">
+        <h3>ऐश्वर्या यादव (ID: SS-G01)</h3>
+        <p><strong>जन्म तिथि:</strong> 06-03-2006</p>
+        <p><strong>ऊंचाई:</strong> 5' 9"</p>
+        <p><strong>शिक्षा:</strong> ग्रेजुएशन</p>
+        <!-- button ke andar ye 'onclick' hona zaroori hai -->
+<button class="view-btn" onclick="openForm()">संपर्क के लिए फॉर्म भरें</button>
+
+    </div>
+</div>
+
+<div class="profile-card" data-gender="female" data-edu="graduation">
+    <div class="profile-img-box">
+        <img src="https://placeholder.com" alt="Profile">
+    </div>
+    <div class="profile-info">
+        <h3>वंदना गोपे (ID: SS-G02)</h3>
+        <p><strong>जन्म तिथि:</strong> 03-09-1990</p>
+        <p><strong>ऊंचाई:</strong> 4' 6"</p>
+        <p><strong>शिक्षा:</strong> L.L.B.</p>
+        <button class="view-btn" onclick="openForm()">संपर्क के लिए फॉर्म भरें</button>
+    </div>
+</div>
+
+<div class="profile-card">
+    <div class="profile-img-box">
+        <img src="https://placeholder.com" alt="Profile">
+    </div>
+    <div class="profile-info">
+        <h3>शिवांगी वर्मा  (ID: SS-G04)</h3>
+        <p><strong>जन्म तिथि:</strong> 02-10-1990</p>
+        <p><strong>ऊंचाई:</strong> 5' 4"</p>
+        <p><strong>शिक्षा:</strong> B.Pharma</p>
+        <button class="view-btn" onclick="openForm()">संपर्क के लिए फॉर्म भरें</button>
+    </div>
+</div>
+
+
+
+<div class="profile-card">
+    <div class="profile-img-box">
+        <img src="https://placeholder.com" alt="Profile">
+    </div>
+    <div class="profile-info">
+        <h3>चंचल अवध (ID: SS-G03)</h3>
+        <p><strong>जन्म तिथि:</strong> 25-12-2001</p>
+        <p><strong>ऊंचाई:</strong> 5' 4"</p>
+        <p><strong>शिक्षा:</strong> B.Sc. (Steno)</p>
+        <button class="view-btn" onclick="openForm()">संपर्क के लिए फॉर्म भरें</button>
+    </div>
+</div>
+
+<!-- Isi tarah aap baaki 44 profiles bhi add kar sakte hain -->
+
         <!-- Profile 1 -->
         <div class="profile-card">
             <div class="profile-img-box">
@@ -101,9 +190,153 @@
     <a href="https://instagram.com" target="_blank" class="social-icon insta">Instagram</a>
     <a href="https://youtube.com" target="_blank" class="social-icon yt">YouTube</a>
 </div>
+<div id="formModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn" onclick="closeForm()">&times;</span>
+        <h2 class="form-title">प्रत्याशी का संपूर्ण विवरण</h2>
+        
+        <form id="registrationForm">
+            <!-- Basic Details -->
+            <div class="form-group">
+                <input type="text" placeholder="प्रत्याशी का नाम" required>
+                <input type="date" placeholder="जन्म तिथि" required>
+            </div>
+            
+            <div class="form-group">
+                <input type="text" placeholder="जन्म स्थान">
+                <input type="time" placeholder="जन्म समय">
+            </div>
 
-    <footer class="main-footer">
-        <p>© 2024 श्याम संगम संस्था - सभी अधिकार सुरक्षित</p>
-    </footer>
+            <div class="form-group">
+                <input type="text" placeholder="ऊंचाई (जैसे 5'5)">
+                <input type="text" placeholder="रंग">
+            </div>
+
+            <div class="radio-group">
+                <label>मांगलिक:</label>
+                <input type="radio" name="manglik"> हाँ 
+                <input type="radio" name="manglik"> आंशिक 
+                <input type="radio" name="manglik"> नहीं
+                <input type="radio" name="manglik"> पता नहीं
+            </div>
+
+            <input type="text" placeholder="शिक्षा (Education)" class="full-width">
+
+            <div class="form-group">
+                <input type="text" placeholder="गोत्र / जाति">
+                <input type="text" placeholder="मामा गोत्र / जाति">
+            </div>
+
+            <div class="radio-group">
+                <label>वैवाहिक स्थिति:</label>
+                <input type="radio" name="status"> अविवाहित 
+                <input type="radio" name="status"> तलाकशुदा 
+                <input type="radio" name="status"> विधवा / विधुर
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="व्यवसाय / पद">
+                <input type="text" placeholder="वार्षिक आय">
+            </div>
+
+            <div class="file-input">
+                <label>📸 पासपोर्ट साइज फोटो लगाएं:</label>
+                <input type="file" accept="image/*">
+            </div>
+
+            <hr><h3>👨‍👩‍👧 परिवार एवं संपर्क विवरण</h3>
+
+            <div class="form-group">
+                <input type="text" placeholder="पिताजी का नाम">
+                <input type="text" placeholder="माताजी का नाम">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="पिताजी का व्यवसाय">
+                <input type="text" placeholder="मासिक आय">
+            </div>
+
+            <div class="form-group">
+                <input type="text" placeholder="भाई (संख्या/विवरण)">
+                <input type="text" placeholder="बहन (संख्या/विवरण)">
+            </div>
+
+            <input type="tel" placeholder="प्रत्याशी का मोबाइल नंबर" class="full-width" required>
+            <textarea placeholder="पूरा पता" class="full-width"></textarea>
+            
+            <textarea placeholder="लड़का/लड़की कैसी चाहिए? (अपेक्षाएं)" class="full-width"></textarea>
+
+            <div class="declaration">
+                <input type="checkbox" required> मैं घोषणा करता हूँ कि मेरे द्वारा दी गई समस्त जानकारी सत्य एवं सही है।
+            </div>
+
+            <button type="submit" class="final-submit-btn">फॉर्म सबमिट करें</button>
+        </form>
+    </div>
+</div>
+
+    <script>
+    const modal = document.getElementById('formModal');
+    
+    // Ye function button ke 'onclick' par kaam karega
+    function openForm() {
+        modal.style.display = "block";
+    }
+
+    function closeForm() {
+        modal.style.display = "none";
+    }
+
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            closeForm();
+        }
+    }
+    function filterProfiles() {
+    // 1. User ne kya select kiya wo pakdein
+    let selectedGender = document.getElementById('genderSelect').value;
+    let searchText = document.getElementById('searchInput').value.toLowerCase();
+    
+    // 2. Saari profiles ko ek-ek karke check karein
+    let profiles = document.querySelectorAll('.profile-card');
+    
+    profiles.forEach(card => {
+        let gender = card.getAttribute('data-gender');
+        let infoText = card.innerText.toLowerCase(); // Card ke andar ka saara text
+        
+        // Match karne ka logic
+        let genderMatch = (selectedGender === 'all' || gender === selectedGender);
+        let textMatch = infoText.includes(searchText);
+        
+        // 3. Agar match ho toh dikhayein, nahi toh chhupa dein
+        if (genderMatch && textMatch) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+function filterProfiles() {
+    let selectedGender = document.getElementById('genderSelect').value;
+    let searchText = document.getElementById('searchInput').value.toLowerCase();
+    let profiles = document.querySelectorAll('.profile-card');
+    
+    profiles.forEach(card => {
+        let gender = card.getAttribute('data-gender'); // Ye 'female' uthayega
+        let infoText = card.innerText.toLowerCase(); 
+        
+        let genderMatch = (selectedGender === 'all' || gender === selectedGender);
+        let textMatch = infoText.includes(searchText);
+        
+        if (genderMatch && textMatch) {
+            card.style.display = "block";
+        } else {
+            card.style.display = "none";
+        }
+    });
+}
+
+</script>
+
 </body>
 </html>

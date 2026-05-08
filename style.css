@@ -592,3 +592,69 @@ font-size: 1.2em;
 .yt { background: #ff0000; }
 
 .social-icon:hover { opacity: 0.8; transform: scale(1.1); transition: 0.3s; }
+.event-banner-img { 
+    width: 100%; 
+    max-width: 900px; 
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px; 
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2); 
+}
+.event-info-container {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.info-card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+/* Highlight Card Style */
+.highlight-card {
+    border-top: 5px solid #FFD700;
+    text-align: center;
+    background: linear-gradient(to bottom, #fff, #fff9e6);
+}
+
+.status-badge {
+    background: #d9534f;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+/* Grid Layout for Location & Rules */
+.details-grid {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.location-card, .rules-card { flex: 1; min-width: 300px; }
+
+.rules-card ul { list-style: none; padding: 0; }
+.rules-card li { margin-bottom: 12px; font-size: 0.95em; color: #444; }
+
+/* Contact Bar */
+.event-contact-bar {
+    background: #003366;
+    color: #FFD700;
+    padding: 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.event-contact-bar a { color: white; text-decoration: none; margin: 0 5px; }
+
+.map-link { color: #003366; font-weight: bold; text-decoration: underline; font-size: 0.9em; }
