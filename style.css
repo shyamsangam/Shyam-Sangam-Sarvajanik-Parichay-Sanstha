@@ -658,3 +658,16 @@ font-size: 1.2em;
 .event-contact-bar a { color: white; text-decoration: none; margin: 0 5px; }
 
 .map-link { color: #003366; font-weight: bold; text-decoration: underline; font-size: 0.9em; }
+/* Jo tab khula hai uska design */
+.nav-links a.active {
+    color: #FFD700; /* Gold color */
+    border-bottom: 3px solid #FFD700; /* Neeche underline */
+    padding-bottom: 5px;
+    opacity: 1;
+}
+
+/* Hover karne par bhi underline dikhe (Optional par accha lagta hai) */
+.nav-links a:hover {
+    border-bottom: 3px solid #FFD700;
+    padding-bottom: 5px;
+}
