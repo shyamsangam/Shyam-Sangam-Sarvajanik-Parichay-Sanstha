@@ -83,6 +83,53 @@
 
         <a href="index.html" class="back-home">← वापस होम पेज पर जाएँ</a>
     </div>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.13.0/firebase-app.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
+  // Your web app's Firebase configuration
+  const firebaseConfig = {
+    apiKey: "AIzaSyASymd_h7Amw0kCvNC0mTQl8fQOJeQud_U",
+    authDomain: "shyam-sangam.firebaseapp.com",
+    projectId: "shyam-sangam",
+    storageBucket: "shyam-sangam.firebasestorage.app",
+    messagingSenderId: "651373220720",
+    appId: "1:651373220720:web:447cf094f7fd9c390af5b5"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  import { getAuth, createUserWithEmailAndPassword } from "https://gstatic.com";
+
+const auth = getAuth();
+// Sign Up ka logic
+const signupForm = document.querySelector('#signupForm form');
+
+signupForm.addEventListener('submit', (e) => {
+    e.preventDefault(); // Page refresh hone se rokne ke liye
+
+    // Form se data nikalna
+    const name = signupForm.querySelector('input[placeholder="आपका पूरा नाम"]').value;
+    const phone = signupForm.querySelector('input[placeholder="मोबाइल नंबर"]').value;
+    const password = signupForm.querySelector('input[placeholder="एक मजबूत पासवर्ड बनाएं"]').value;
+
+    // Firebase mein User banana (Abhi ke liye hum email ki jagah number@sangam.com use karenge)
+    const email = phone + "@sangam.com"; 
+
+    createUserWithEmailAndPassword(auth, email, password)
+        .then((userCredential) => {
+            // Success!
+            alert("Dhanyawad " + name + "! Aapka khata ban gaya hai. Active karne ke liye sanstha se sampark karein.");
+            signupForm.reset();
+        })
+        .catch((error) => {
+            // Agar koi galti ho (jaise password chota ho)
+            alert("Galti: " + error.message);
+        });
+});
+
+</script>
 </body>
 </html>
