@@ -31,8 +31,7 @@
     <li><a href="help.html">Help</a></li>
     <!-- Pehle aisa tha: <a href="#" class="login-btn">Login</a> -->
 
-
-</ul>
+                                                          </ul>
 
 
 
@@ -40,6 +39,7 @@
         <a href="login.html" class="login-btn">Login</a>
         <a href="#registration-form" class="submit-btn">Free Form Submit</a>
     </div>
+
 </nav>
 
 
@@ -293,21 +293,24 @@
         <span class="close-btn" onclick="closeForm()">&times;</span>
         <h2 class="form-title">प्रत्याशी का संपूर्ण विवरण</h2>
         
-        <form id="registrationForm">
+        <form id="registration-form" name="google-sheet">
             <!-- Basic Details -->
             <div class="form-group">
-                <input type="text" placeholder="प्रत्याशी का नाम" required>
-                <input type="date" placeholder="जन्म तिथि" required>
+                <input type="text" name="Pratyashi_Naam" placeholder="प्रत्याशी का नाम" required>
+<input type="date" name="DOB" placeholder="जन्म तिथि" required>
+
             </div>
             
             <div class="form-group">
-                <input type="text" placeholder="जन्म स्थान">
-                <input type="time" placeholder="जन्म समय">
+                <input type="text" name="Janm_Sthan" placeholder="जन्म स्थान">
+<input type="time" name="Janm_Samay" placeholder="जन्म समय">
+
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="ऊंचाई (जैसे 5'5)">
-                <input type="text" placeholder="रंग">
+               <input type="text" name="Unchai" placeholder="ऊंचाई">
+<input type="text" name="Rang" placeholder="रंग">
+
             </div>
 
             <div class="radio-group">
@@ -318,11 +321,12 @@
                 <input type="radio" name="manglik"> पता नहीं
             </div>
 
-            <input type="text" placeholder="शिक्षा (Education)" class="full-width">
+           <input type="text" name="Shiksha" placeholder="शिक्षा" class="full-width">
+
 
             <div class="form-group">
-                <input type="text" placeholder="गोत्र / जाति">
-                <input type="text" placeholder="मामा गोत्र / जाति">
+                <input type="text" name="Gotra"  placeholder="गोत्र / जाति">
+                <input type="text" name="Mama Gotra"  placeholder="मामा गोत्र / जाति">
             </div>
 
             <div class="radio-group">
@@ -333,8 +337,9 @@
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="व्यवसाय / पद">
-                <input type="text" placeholder="वार्षिक आय">
+                <input type="text" name="Vyavasay_Pad" placeholder="व्यवसाय / पद">
+<input type="text" name="Varshik_Aay" placeholder="वार्षिक आय">
+
             </div>
 
             <div class="file-input">
@@ -345,24 +350,23 @@
             <hr><h3>👨‍👩‍👧 परिवार एवं संपर्क विवरण</h3>
 
             <div class="form-group">
-                <input type="text" placeholder="पिताजी का नाम">
-                <input type="text" placeholder="माताजी का नाम">
+                <input type="text" name="Pitaji_Naam" placeholder="पिताजी का नाम">
+<input type="text" name="Mataji_Naam" placeholder="माताजी का नाम">
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="पिताजी का व्यवसाय">
-                <input type="text" placeholder="मासिक आय">
+                <input type="text" name="Pitaji_Vyavasay" placeholder="पिताजी का व्यवसाय">
+<input type="text" name="Masik_Aay" placeholder="मासिक आय">
             </div>
 
             <div class="form-group">
-                <input type="text" placeholder="भाई (संख्या/विवरण)">
-                <input type="text" placeholder="बहन (संख्या/विवरण)">
+              <input type="text" name="Bhai_Vivaran" placeholder="भाई (संख्या/विवरण)">
+<input type="text" name="Behen_Vivaran" placeholder="बहन (संख्या/विवरण)">
             </div>
 
-            <input type="tel" placeholder="प्रत्याशी का मोबाइल नंबर" class="full-width" required>
-            <textarea placeholder="पूरा पता" class="full-width"></textarea>
-            
-            <textarea placeholder="लड़का/लड़की कैसी चाहिए? (अपेक्षाएं)" class="full-width"></textarea>
+            <input type="tel" name="Mobile_No" placeholder="प्रत्याशी का मोबाइल नंबर" class="full-width" required>
+            <textarea name="Pura_Pata" placeholder="पूरा पता" class="full-width"></textarea>
+<textarea name="Apeksha" placeholder="लड़का/लड़की कैसी चाहिए? (अपेक्षाएं)" class="full-width"></textarea>
 
             <div class="declaration">
                 <input type="checkbox" required> मैं घोषणा करता हूँ कि मेरे द्वारा दी गई समस्त जानकारी सत्य एवं सही है।
@@ -370,6 +374,7 @@
 
             <button type="submit" class="final-submit-btn">फॉर्म सबमिट करें</button>
         </form>
+        
     </div>
 </div>
 <div class="social-links">
@@ -428,6 +433,36 @@ document.querySelectorAll('.stat-number').forEach(num => {
 });
 
 </script>
+<script>
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbwpXjQvxEhFeICjCP8NpzDpkGtQsRzbvGHqRysZQvliuI1ZYSjXPMrThJy3vqbgT13vUg/exec'
+  const form = document.forms['google-sheet'];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    
+    // Button ko "Submitting..." dikhane ke liye
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.innerText = "कृपया प्रतीक्षा करें...";
+    submitBtn.disabled = true;
+
+    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+      .then(response => {
+          alert("धन्यवाद! आपका पंजीकरण फॉर्म सफलतापूर्वक जमा हो गया है।");
+          submitBtn.innerText = originalText;
+          submitBtn.disabled = false;
+          form.reset(); // Form khali karne ke liye
+          closeForm(); // Popup band karne ke liye
+      })
+      .catch(error => {
+          console.error('Error!', error.message);
+          alert("क्षमा करें! कुछ तकनीकी समस्या आई है। कृपया दोबारा प्रयास करें।");
+          submitBtn.innerText = originalText;
+          submitBtn.disabled = false;
+      });
+  });
+</script>
+
 <a href="https://wa.me" class="whatsapp-float" target="_blank">
     <img src="https://wikimedia.org" >
     <span>WhatsApp</span>
