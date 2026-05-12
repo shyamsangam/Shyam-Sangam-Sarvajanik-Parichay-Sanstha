@@ -58,23 +58,23 @@ body {
 }
 /* Navigation Bar Ka Design */
 .navbar {
-    background-color: #002244;
-    padding: 30px 50px;
     display: flex;
-    justify-content: space-between; /* Isse teeno hisse (Left, Center, Right) alag ho jayenge */
+    justify-content: space-between; /* Ye Tabs aur Buttons ke beech jagah bana dega */
     align-items: center;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    padding: 10px 50px; /* Side se thodi jagah chhodne ke liye */
+    background-color: #003366;
 }
-.nav-links a {
-    text-decoration: none;
-    color: white;             /* Text ka rang white karne ke liye */
-    font-weight: bold;
-    font-size: 1.2em;         /* Size thoda badhane ke liye (1.1 se 1.2 kiya) */
-    transition: 0.3s;
-    letter-spacing: 0.5px;    /* Isse har word thoda saaf dikhega */
+
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+    margin-left: auto; /* Ye magic hai: Tabs ko center ki taraf dhakelega */
+    margin-right: auto; /* Buttons ko right mein dhakelega */
 }
+
+
 
 .nav-links a:hover {
     color: #FFD700;           /* Mouse le jane par wapas Gold ho jayega */
@@ -95,7 +95,9 @@ body {
     display: flex;
     align-items: center;
     gap: 15px;
+    /* Yahan margin ki zaroorat nahi hai, navbar usey apne aap right mein rakhega */
 }
+
 
 .login-btn {
     color: white;
@@ -594,7 +596,7 @@ font-size: 1.2em;
 .social-icon:hover { opacity: 0.8; transform: scale(1.1); transition: 0.3s; }
 .event-banner-img { 
     width: 100%; 
-    max-width: 900px; 
+    max-width: 1300px; 
     display: block;
     margin: 20px auto;
     border-radius: 15px; 
