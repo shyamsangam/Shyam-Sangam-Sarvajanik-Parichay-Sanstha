@@ -1425,3 +1425,220 @@ font-size: 1.2em;
     min-width: 45px;
     text-align: center;
 }
+/* ==========================================
+   WORKFLOW SECTION STYLES (कार्य प्रणाली का डिजाइन)
+   ========================================== */
+.workflow-section {
+    max-width: 1200px;
+    margin: 60px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.workflow-header {
+    text-align: center;
+    margin-bottom: 45px;
+}
+
+.workflow-header span {
+    color: #660011; /* Rich Maroon */
+    font-weight: bold;
+    letter-spacing: 2px;
+    font-size: 0.9em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.workflow-header h2 {
+    font-size: 2.4em;
+    color: #003366; /* Matching Main Title Blue */
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.workflow-header p {
+    color: #666;
+    font-size: 1.1em;
+    margin: 0;
+}
+
+.workflow-gold-line {
+    width: 80px;
+    height: 4px;
+    background: #FFD700; /* Gold Line */
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* 2-Column Responsive Layout Grid */
+.workflow-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Beautiful Interactive Card */
+.workflow-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 25px;
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+    transition: all 0.3s ease;
+}
+
+/* Hover effect: Smooth lift and colorful accent shadows */
+.workflow-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(102, 0, 17, 0.1);
+    border-color: #660011;
+}
+
+/* Premium Gold Frame Logo Box */
+.workflow-logo-box {
+    font-size: 32px;
+    background: #fff0f2; /* Soft Maroon tint */
+    border: 2px solid #FFD700; /* Gold Frame */
+    padding: 12px;
+    border-radius: 14px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    min-width: 48px;
+    text-align: center;
+}
+
+.workflow-text {
+    text-align: left;
+}
+
+/* Phase Badge */
+/* "चरण" हटने के बाद सिर्फ़ नंबर को गोल बैज बनाने के लिए */
+.step-number {
+    font-size: 0.9em;
+    font-weight: bold;
+    color: #FFD700; /* गोल्ड नंबर */
+    background: #660011; /* मैरून बैकग्राउंड */
+    width: 28px;
+    height: 28px;
+    border-radius: 50%; /* इससे बैज एकदम परफेक्ट गोल दिखेगा */
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 8px;
+    box-shadow: 0 3px 8px rgba(102, 0, 17, 0.2);
+}
+
+.workflow-text h3 {
+    color: #111827;
+    font-size: 1.25em;
+    margin: 0 0 8px 0;
+    font-weight: bold;
+}
+
+.workflow-text p {
+    color: #555555;
+    font-size: 1.02em;
+    line-height: 1.6;
+    margin: 0;
+    text-align: justify;
+}
+
+/* Mobile Screens */
+@media (max-width: 768px) {
+    .workflow-grid { grid-template-columns: 1fr; } /* Mobile par 1 column */
+    .workflow-header h2 { font-size: 1.9em; }
+    .workflow-card { padding: 20px; }
+}
+
+
+
+/* ===================================================
+   HOME PAGE SUCCESS STORIES - FIXED SMALL PHOTO FRAMES
+   =================================================== */
+.home-success-section {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.home-success-header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.home-success-header h2 {
+    font-size: 2.2em;
+    color: #003366;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.home-success-header p {
+    color: #666;
+    font-size: 1.05em;
+    margin: 0;
+}
+
+.success-gold-line {
+    width: 60px;
+    height: 4px;
+    background: #FFD700;
+    margin: 12px auto 0 auto;
+    border-radius: 2px;
+}
+
+/* STRICT HORIZONTAL ROW FOR PHOTOS */
+.home-success-photo-grid {
+    display: flex;
+    flex-direction: row;       /* Force karega ek hi line mein rehne ke liye */
+    justify-content: center;   /* Center mein align karega */
+    align-items: center;
+    gap: 15px;                 /* Photos ke beech ki doori */
+    flex-wrap: nowrap;         /* Kisi bhi haal mein photo neeche nahi giregi desktop par */
+    margin: 0 auto;
+    max-width: 900px;          /* Poore container ka size control karega */
+}
+
+/* EXACT SMALL FRAME SIZE CONTROL (Chota aur Fixed Size) */
+/* EXACT SMALL FRAME SIZE CONTROL (Aapke laptop screen ke liye) */
+.home-success-photo-card {
+    width: 280px;              /* 1. Laptop par CHAUDAI badhane ke liye (Pehle 180px tha) */
+    height: 480px;             /* 2. Laptop par UNCHAI badhane ke liye (Pehle 230px thesis) */
+    flex: 0 0 280px;           /* 3. IS WAALE NUMBER KO BHI HAMESHA WIDTH KE BARAABAR RAKHEIN */
+    border: 4px solid #FFD700; 
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect */
+.home-success-photo-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(102, 0, 17, 0.2);
+    border-color: #660011;
+}
+
+.home-success-photo-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;         
+    display: block;
+}
+
+/* Mobile Devices ke liye (Iske andar sirf chota mobile size rahega) */
+@media (max-width: 768px) {
+    .home-success-photo-grid {
+        flex-wrap: wrap;       
+        justify-content: center;
+    }
+    .home-success-photo-card {
+        width: 140px;          /* Mobile par chota dikhega */
+        height: 180px;
+        flex: 0 0 140px;
+    }
+}
