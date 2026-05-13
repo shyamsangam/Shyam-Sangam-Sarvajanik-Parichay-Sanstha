@@ -14,7 +14,7 @@ body {
 
 /* Header ka blue background aur gold text */
 .main-header {
-    background-color: #003366; /* Dark Blue */
+    background-color: #660011; /* Dark Blue */
     color: #FFD700; /* Gold */
     padding: 30px 10px;
     text-align: center;
@@ -50,8 +50,8 @@ body {
 
 /* Footer (Niche ka address bar) */
 .main-footer {
-    background: #222;
-    color: #fff;
+    background: #3a000a;
+    color: #FFD700;
     text-align: center;
     padding: 20px;
     margin-top: 40px;
@@ -62,7 +62,7 @@ body {
     justify-content: space-between; /* Ye Tabs aur Buttons ke beech jagah bana dega */
     align-items: center;
     padding: 10px 50px; /* Side se thodi jagah chhodne ke liye */
-    background-color: #003366;
+    background-color: #660011;
 }
 
 
@@ -410,7 +410,7 @@ font-size: 1.2em;
 .profile-info p { font-size: 0.9em; margin: 5px 0; color: #555; }
 
 .view-btn {
-    background: #003366;
+    background: #0660011;
     color: white;
     border: none;
     width: 100%;
@@ -672,4 +672,249 @@ font-size: 1.2em;
 .nav-links a:hover {
     border-bottom: 3px solid #FFD700;
     padding-bottom: 5px;
+}
+/* About Section Main Container */
+/* About Section Main Container */
+.about-sangam-section {
+    /* Rich Mehroon (Maroon) aur Dark Crimson ka luxurious gradient */
+    background: linear-gradient(135deg, #660011 0%, #3a000a 100%); 
+    color: #ffffff;
+    padding: 80px 40px;
+    margin: 50px 0;
+    font-family: 'Arial', sans-serif;
+    border-top: 4px solid #FFD700; /* Upar Sone jaisi patti */
+    border-bottom: 4px solid #FFD700; /* Niche Sone jaisi patti */
+    position: relative;
+}
+
+/* Background mein shubh traditional feel dene ke liye ek bariki line design (Optional par premium) */
+.about-sangam-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(circle, rgba(255,215,0,0.03) 1px, transparent 1px);
+    background-size: 20px 20px;
+    pointer-events: none;
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Mobile responsive layout */
+}
+
+/* Left Side Text Styling */
+.about-text-block {
+    flex: 1.2;
+    min-width: 320px;
+    text-align: left;
+}
+
+.about-text-block h2 {
+    color: #FFD700; /* Rich Gold Heading */
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+/* Heading ke niche stylish gold line */
+.about-text-block h2::after {
+    content: '';
+    display: block;
+    width: 70px;
+    height: 4px;
+    background-color: #FFD700;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.about-text-block p {
+    font-size: 1.15em;
+    line-height: 1.9;
+    margin-bottom: 22px;
+    color: #f7e6e6; /* Halka cream-white jo mehroon par khilkar dikhta hai */
+    text-align: justify;
+}
+
+/* Right Side Image Block */
+.about-image-block {
+    flex: 0.8;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image-block img {
+    width: 100%;
+    max-width: 420px;
+    border-radius: 20px; /* Sundar curved corners */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6); /* Premium dark shadow */
+    border: 5px solid #FFD700; /* Glowing Gold Border */
+    transition: all 0.4s ease;
+}
+
+/* Hover Effect: Mouse le jane par halki raushni aur zoom effect */
+.about-image-block img:hover {
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow: 0 25px 50px rgba(255, 215, 0, 0.25); /* Gold glow effect */
+}
+
+/* Mobile responsive settings */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-text-block { text-align: center; }
+    .about-text-block h2 { font-size: 1.9em; }
+    .about-text-block h2::after { margin: 10px auto 0 auto; }
+}
+
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    flex-wrap: wrap; /* Mobile par apne aap fit hone ke liye */
+}
+
+/* Left Side Text Styling */
+.about-text-block {
+    flex: 1.2;
+    min-width: 320px;
+    text-align: left;
+}
+
+.about-text-block h2 {
+    color: #FFD700; /* Rich Gold Color */
+    font-size: 2.4em;
+    margin-bottom: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    display: inline-block;
+    position: relative;
+}
+
+/* Heading ke niche ek stylish gold bar */
+.about-text-block h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: #FFD700;
+    margin-top: 10px;
+    border-radius: 2px;
+}
+
+.about-text-block p {
+    font-size: 1.15em;
+    line-height: 1.7;
+    margin-bottom: 22px;
+    color: #e2e8f0; /* Soft readable white */
+    text-align: justify;
+}
+
+/* Right Side Image Block */
+.about-image-block {
+    flex: 0.8;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Visheshata section ki photo ka size bada karne ke liye */
+.about-image-block img {
+    width: 100%;
+    max-width: 500px;      /* Pehle 420px tha, isse chaudai thodi badhegi */
+    height: 450px;         /* Yahan se aap jitni chahein height badha sakte hain */
+    object-fit: cover;     /* Isse height badhne par photo kheechegi ya kharab nahi hogi */
+    border-radius: 20px;   /* Sundar curved corners */
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.6); 
+    border: 5px solid #FFD700; /* Glowing Gold Border */
+    transition: all 0.4s ease;
+}
+
+
+/* Hover Effect: Image par mouse le jaane se halki roshni aur zoom aayega */
+.about-image-block img:hover {
+    transform: scale(1.04) rotate(1deg);
+    box-shadow: 0 25px 50px rgba(255, 215, 0, 0.2); /* Gold glow shadow */
+}
+
+/* Mobile responsive settings */
+@media (max-width: 768px) {
+    .about-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 40px;
+    }
+    .about-text-block { text-align: center; }
+    .about-text-block h2 { font-size: 1.9em; }
+    .about-text-block h2::after { margin: 10px auto 0 auto; }
+}
+/* Footer grid layout ko fir se theek karne ke liye */
+.footer-links-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 40px;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Har ek column ki setting */
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+/* Heading ko Gold aur sundar banane ke liye */
+/* Footer Heading with Yellow Underline */
+.footer-col h3 {
+    color: #FFD700; /* Gold/Yellow Color */
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+    
+    /* Underline jodne ka raasta */
+    border-bottom: 2px solid #FFD700; /* 2px moti yellow line */
+    display: inline-block;             /* Line sirf text ke niche rahegi, poore dabba par nahi */
+    padding-bottom: 6px;               /* Text aur line ke beech thodi jagah */
+}
+
+
+/* Faltu ke bullet points (dots) hatane ke liye */
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Har ek link ke beech ki doori */
+.footer-col li {
+    margin-bottom: 12px;
+}
+
+/* Links ka purana professional color white karne ke liye */
+.footer-col a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.05em;
+    transition: 0.3s;
+}
+
+/* Mouse le jaane par gold color chamke uske liye */
+.footer-col a:hover {
+    color: #FFD700;
+    padding-left: 5px; /* Thoda sa aage sarakne ka effect */
 }
