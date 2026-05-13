@@ -918,3 +918,200 @@ font-size: 1.2em;
     color: #FFD700;
     padding-left: 5px; /* Thoda sa aage sarakne ka effect */
 }
+/* ==========================================
+   GALLERY PAGE STYLES (तस्वीरें पेज का डिजाइन)
+   ========================================== */
+.gallery-section { 
+    max-width: 1200px; 
+    margin: 50px auto; 
+    padding: 0 20px; 
+    text-align: center; 
+}
+
+.gallery-grid { 
+    display: flex; 
+    flex-wrap: wrap; 
+    gap: 20px; 
+    justify-content: center; 
+    margin-top: 30px; 
+}
+
+.gallery-item { 
+    flex: 0 1 350px; 
+    border: 4px solid #853333ef; /* Gold border */
+    border-radius: 12px; 
+    overflow: hidden; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15); 
+    transition: 0.3s; 
+}
+
+.gallery-item:hover { 
+    transform: scale(1.03); /* Mouse le jane par thoda bada hoga */
+}
+
+.gallery-item img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+    display: block; 
+}
+/* ==========================================
+   SUCCESS STORIES STYLES (सफल कहानियाँ पेज)
+   ========================================== */
+.success-body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.success-header-section {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #660011 0%, #3a000a 100%); /* Mehroon Theme */
+    color: white;
+    border-bottom: 4px solid #FFD700; /* Gold Line */
+}
+
+.success-header-section h2 {
+    font-size: 2.4em;
+    margin: 0 0 10px 0;
+    color: #FFD700; /* Gold Heading */
+}
+
+.success-header-section p {
+    font-size: 1.1em;
+    color: #f7e6e6;
+    margin: 0;
+}
+
+/* Grid Settings */
+.success-grid-container {
+    max-width: 1100px;
+    margin: 50px auto;
+    padding: 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+/* Story Individual Card Style */
+.success-story-card {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    padding: 30px;
+    flex: 0 1 320px; /* Ek line mein 3 cards adjust honge desktop par */
+    text-align: center;
+    border-top: 5px solid #660011; /* Top Mehroon border */
+    transition: 0.3s ease;
+}
+
+.success-story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(102, 0, 17, 0.15);
+}
+
+/* Couple Circle Image Settings */
+/* Couple Rectangular Image Settings (Bina Gole Ke) */
+.couple-img-box img {
+    width: 100%;         /* Box ki chaudai ke hisab se automatic fit hoga */
+    max-width: 360px;    /* Photo ki chaudai (Aap ise badha sakte hain) */
+    height: 480px;       /* Photo ki unchai (Aap ise badha sakte hain) */
+    border-radius: 12px; /* Halki golaai corners par, jo photo ko modern look degi */
+    object-fit: cover;   /* Isse photo bina kheeche ekdum perfect set rahegi */
+    border: 5px solid #FFD700; /* Sundar Gold Border Frame */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* Premium Shadow effect */
+}
+
+
+.couple-details h3 {
+    color: #660011;
+    font-size: 1.3em;
+    margin: 15px 0 5px 0;
+}
+
+.wedding-year {
+    font-size: 0.9em;
+    color: #b8860b; /* Dark Gold/Bronze for year */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.couple-message {
+    font-size: 0.98em;
+    line-height: 1.6;
+    color: #444;
+    text-align: justify;
+    font-style: italic; /* Text thoda tircha professional dikhega */
+}
+
+/* Back Link Style */
+.back-home-link {
+    display: inline-block;
+    color: #660011;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.05em;
+    transition: 0.3s;
+}
+
+.back-home-link:hover {
+    color: #b8860b;
+    transform: translateX(-5px);
+}
+/* ==========================================
+   LEGAL PAGES STYLES (गोपनीयता नीति पेज)
+   ========================================== */
+.legal-body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.legal-header-section {
+    text-align: center;
+    padding: 40px 20px;
+    background: linear-gradient(135deg, #660011 0%, #3a000a 100%); /* Mehroon Theme */
+    color: white;
+    border-bottom: 4px solid #FFD700;
+}
+
+.legal-header-section h2 {
+    font-size: 2.2em;
+    margin: 0 0 10px 0;
+    color: #FFD700;
+}
+
+.legal-content-container {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.legal-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    padding: 40px;
+    text-align: left;
+    border-left: 5px solid #660011;
+}
+
+.legal-card h3 {
+    color: #660011;
+    font-size: 1.3em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+    border-bottom: 1px dashed #FFD700;
+    padding-bottom: 5px;
+}
+
+.legal-card p {
+    font-size: 1.05em;
+    line-height: 1.7;
+    color: #444;
+    text-align: justify;
+}
