@@ -66,37 +66,38 @@ body {
 }
 
 
+/* --- Desktop Nav Links Clean Code --- */
 .nav-links {
     display: flex;
     list-style: none;
-    gap: 25px;
-    margin-left: auto; /* Ye magic hai: Tabs ko center ki taraf dhakelega */
-    margin-right: auto; /* Buttons ko right mein dhakelega */
+    gap: 15px;          /* Elements ke beech barabar gap */
+    margin: 0 auto;     /* Yeh magic hai: pure menu ko hamesha center mein rakhega */
+    padding: 0;
+    align-items: center;
 }
 
+.nav-links li {
+    margin: 0;          /* Purana margin hataya taki text break na ho */
+}
 
+.nav-links a {
+    white-space: nowrap; /* Text ko kabhi bhi upar-niche break nahi hone dega */
+    text-decoration: none;
+    font-size: 1.1rem;   /* Ekदम sahi standard size */
+}
 
 .nav-links a:hover {
-    color: #FFD700;           /* Mouse le jane par wapas Gold ho jayega */
+    color: #FFD700;     /* Mouse le jaane par gold color */
 }
 
-/* Center Links */
-.nav-links {
-    list-style: none;
-    display: flex;
-    margin: 0;
-    padding: 0;
-}
-
-.nav-links li { margin: 0 15px; }
 
 /* Right Buttons Style */
 .nav-auth {
     display: flex;
     align-items: center;
-    gap: 45px;
-    /* Yahan margin ki zaroorat nahi hai, navbar usey apne aap right mein rakhega */
+    gap: 20px; /* 45px se kam karke 20px kiya taaki space bache */
 }
+
 
 
 .login-btn {
