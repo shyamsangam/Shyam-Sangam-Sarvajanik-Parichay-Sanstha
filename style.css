@@ -1656,32 +1656,94 @@ font-size: 1.2em;
 /* ==========================================
    COMPLETE MOBILE RESPONSIVE FIX (मोबाइल के लिए सुधार)
    ========================================== */
-@media (max-width: 768px) {
-    
-    /* 1. Main Navbar & Buttons */
+/* ==========================================================================
+   FINAL COMBINED RESPONSIVE CODE (LAPTOP + MOBILE NAVBAR & LAYOUT FIX)
+   ========================================================================== */
+
+/* 1. LAPTOP SCREEN DESIGN (जब वेबसाइट कंप्यूटर/लैपटॉप पर खुलेगी) */
+@media (min-width: 769px) {
     .navbar {
-        flex-direction: column; /* Mobile par sab ek ke niche ek aayega */
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: nowrap !important; /* Content neeche nahi girega */
+        padding: 10px 40px !important;
+        background-color: #660011 !important; /* Rich Maroon background */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    .nav-links {
+        display: flex !important;
+        flex-direction: row !important;
+        list-style: none !important;
+        gap: 25px !important; /* Tabs ke beech ka gap */
+        margin: 0 auto !important; /* Tabs ekdum center mein rahenge */
+        padding: 0 !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .nav-auth {
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        gap: 25px !important; /* Login aur Free Form button ke beech ka gap */
+        margin: 0 !important;
+        flex-wrap: nowrap !important;
+    }
+
+    .login-btn {
+        color: #ffffff !important;
+        text-decoration: none !important;
+        font-weight: bold !important;
+        font-size: 1.05em !important;
+        white-space: nowrap !important;
+    }
+
+    .submit-btn {
+        white-space: nowrap !important; /* Text ko tootne se rokega */
+    }
+}
+
+/* 2. MOBILE SCREEN DESIGN (जब वेबसाइट मोबाइल पर खुलेगी) */
+@media (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+    }
+    
+    .navbar, header, main, section, footer, div {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    .navbar {
+        display: flex !important;
+        flex-direction: column !important; /* Mobile par sab ek ke niche ek */
         padding: 15px 20px !important;
-        gap: 15px;
+        gap: 15px !important;
+        background-color: #660011 !important;
     }
     
     .nav-links {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: center;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
         gap: 15px !important;
         margin: 10px 0 !important;
+        padding: 0 !important;
     }
     
     .nav-auth {
-        width: 100%;
-        justify-content: center;
-        gap: 10px;
+        display: flex !important;
+        width: 100% !important;
+        justify-content: center !important;
+        gap: 15px !important;
     }
 
-    /* 2. Visheshata / About Section (Maroon Box) */
     .about-container {
-        flex-direction: column !important; /* Text upar, photo neeche */
+        flex-direction: column !important;
         text-align: center !important;
         gap: 30px !important;
     }
@@ -1696,20 +1758,19 @@ font-size: 1.2em;
     
     .about-image-block img {
         max-width: 100% !important;
-        height: 380px !important; /* Mobile ke liye perfect lambai */
+        height: 380px !important;
     }
 
-    /* 3. Success Stories 4-Photo Grid (Maroon Box Fix) */
     .home-success-photo-grid {
         flex-direction: row !important;
-        flex-wrap: wrap !important; /* 4 photos ko 2x2 ki grid mein set karega */
+        flex-wrap: wrap !important; /* 4 photos ko 2x2 grid banayega */
         justify-content: center !important;
         gap: 12px !important;
         padding: 20px 15px !important;
     }
     
     .home-success-photo-card {
-        width: 135px !important; /* Mobile par choti aur sundar photos */
+        width: 135px !important;
         height: 180px !important;
         flex: 0 0 135px !important;
         border-width: 3px !important;
@@ -1719,47 +1780,16 @@ font-size: 1.2em;
         font-size: 1.8em !important;
     }
 
-    /* 4. Common Forms & Input Width Fix */
-    .auth-input, input, select, textarea {
-        font-size: 1em !important;
-        padding: 12px !important;
-    }
-    
-    .auth-card {
-        padding: 25px !important;
-        margin-bottom: 20px !important;
-    }
-}
-/* Right side ki khali jagah (Overflow) ko jad se khatam karne ke liye */
-html, body {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden; /* Yeh line right side bhagne wale content ko kaat degi */
-}
-
-/* Mobile Responsive Adjustments (360px standard screen fix) */
-@media (max-width: 768px) {
-    
-    /* Poore containers ko strictly mobile screen ke andar fit rakhne ke liye */
-    * {
-        box-sizing: border-box;
-    }
-    
-    .navbar, header, main, section, footer, div {
-        max-width: 100% !important;
-        width: 100% !important;
-    }
-
-    /* Main Header ka bada text screen se bahar na jaye */
     .main-header h1 {
         font-size: 2em !important;
         word-wrap: break-word;
     }
+}
 
-    /* WhatsApp floating button ko screen ke andar rakhne ke liye */
-    .whatsapp-float {
-        right: 20px !important;
-        bottom: 20px !important;
-    }
+/* 3. GLOBAL OVERFLOW LOCK (राइट साइड की खाली सफ़ेद जगह को रोकने के लिए) */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Screen se bahar bhagne wale content ko block karega */
 }
