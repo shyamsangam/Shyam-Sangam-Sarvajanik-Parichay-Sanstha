@@ -1821,7 +1821,7 @@ font-size: 1.2em;
 
     /* 3. Help aur Login ko alag-alag dikhane ke liye unke font ko thoda tight karein */
     .nav-links a {
-        font-size: 0.95em !important; /* Font size halka sa chota karne se online bheed bilkul nahi dikhegi */
+        font-size: 1.15em !important; /* Font size halka sa chota karne se online bheed bilkul nahi dikhegi */
         white-space: nowrap !important; /* Text ko do line mein tootne se rokega */
     }
    }
