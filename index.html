@@ -50,6 +50,31 @@
 
 </nav>
 
+<!-- Automatic Photo Slider Section -->
+<div class="home-slider-container">
+    <div class="home-slider-wrapper">
+        <!-- Slide 1 -->
+        <div class="home-slide active">
+            <img src="photo3.JPG" alt="Sammelan Banner 1">
+            
+        </div>
+        <!-- Slide 2 -->
+        <div class="home-slide">
+            <img src="photos1.jpg" alt="Sammelan Banner 2">
+           
+        </div>
+
+        <div class="home-slide">
+            <img src="banner.jpg" alt="Sammelan Banner 2">
+           
+        </div>
+        <!-- Slide 3 -->
+        <div class="home-slide">
+            <img src="photo4.JPG" alt="Sammelan Banner 3">
+           
+        </div>
+    </div>
+</div>
 
     <header class="main-header">
         <h1 class="main-title">श्याम संगम सार्वजनिक परिचय संस्था</h1>
@@ -326,11 +351,13 @@
     <div class="payment-card">
         <h3>सहयोग एवं डोनेशन (Scan to Pay)</h3>
         <p>संस्था के सामाजिक कार्यों में अपना योगदान देने के लिए नीचे दिए गए QR कोड को स्कैन करें।</p>
+        <h2>Shyam Sangam Sarvajanik Parichay Sanstha</h2>
         <div class="qr-placeholder">
             <!-- Yahan apni QR image ka path dalen -->
-            <img src="my-qr-code.png" alt="Sanstha QR Code" style="width: 200px; border: 5px solid #fff;">
+            <img src="sansthaqr.jpg" alt="Sanstha QR Code" style="width: 400px; border: 5px solid #fff;">
         </div>
         <div class="bank-info">
+            <p><strong>UPI ID</strong>  : 9424446398@sbi </p>
             <p><strong>SBI BANK</strong> | A/c: 44827054405 | IFSC: SBIN0030015</p>
         </div>
     </div>
@@ -557,6 +584,21 @@ document.querySelectorAll('.stat-number').forEach(num => {
           submitBtn.disabled = false;
       });
   });
+  // Automatic Photo Slider Logic
+document.addEventListener("DOMContentLoaded", function() {
+    const slides = document.querySelectorAll(".home-slide");
+    let currentSlide = 0;
+
+    function nextSlide() {
+        slides[currentSlide].classList.remove("active");
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].classList.add("active");
+    }
+
+    // Har 3000 milliseconds (3 second) mein photo automatic badlegi
+    setInterval(nextSlide, 3000);
+});
+
 </script>
 
 <a href="https://wa.me" class="whatsapp-float" target="_blank">
