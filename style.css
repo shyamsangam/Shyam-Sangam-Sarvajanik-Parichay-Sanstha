@@ -679,7 +679,7 @@ font-size: 1.2em;
     /* Rich Mehroon (Maroon) aur Dark Crimson ka luxurious gradient */
     background: linear-gradient(135deg, #660011 0%, #3a000a 100%); 
     color: #ffffff;
-    padding: 80px 40px;
+    padding: 5px 40px;
     margin: 50px 0;
     font-family: 'Arial', sans-serif;
     border-top: 4px solid #FFD700; /* Upar Sone jaisi patti */
@@ -1640,5 +1640,126 @@ font-size: 1.2em;
         width: 140px;          /* Mobile par chota dikhega */
         height: 180px;
         flex: 0 0 140px;
+    }
+}
+
+
+
+
+/* yha se upr rkhna hai sb  */
+/* yha se upr rkhna hai sb  */
+/* yha se upr rkhna hai sb  */
+/* yha se upr rkhna hai sb  */
+/* yha se upr rkhna hai sb  */
+
+
+/* ==========================================
+   COMPLETE MOBILE RESPONSIVE FIX (मोबाइल के लिए सुधार)
+   ========================================== */
+@media (max-width: 768px) {
+    
+    /* 1. Main Navbar & Buttons */
+    .navbar {
+        flex-direction: column; /* Mobile par sab ek ke niche ek aayega */
+        padding: 15px 20px !important;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px !important;
+        margin: 10px 0 !important;
+    }
+    
+    .nav-auth {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    /* 2. Visheshata / About Section (Maroon Box) */
+    .about-container {
+        flex-direction: column !important; /* Text upar, photo neeche */
+        text-align: center !important;
+        gap: 30px !important;
+    }
+    
+    .about-text-block {
+        text-align: center !important;
+    }
+    
+    .about-text-block h2 {
+        font-size: 1.8em !important;
+    }
+    
+    .about-image-block img {
+        max-width: 100% !important;
+        height: 380px !important; /* Mobile ke liye perfect lambai */
+    }
+
+    /* 3. Success Stories 4-Photo Grid (Maroon Box Fix) */
+    .home-success-photo-grid {
+        flex-direction: row !important;
+        flex-wrap: wrap !important; /* 4 photos ko 2x2 ki grid mein set karega */
+        justify-content: center !important;
+        gap: 12px !important;
+        padding: 20px 15px !important;
+    }
+    
+    .home-success-photo-card {
+        width: 135px !important; /* Mobile par choti aur sundar photos */
+        height: 180px !important;
+        flex: 0 0 135px !important;
+        border-width: 3px !important;
+    }
+    
+    .home-success-header h2 {
+        font-size: 1.8em !important;
+    }
+
+    /* 4. Common Forms & Input Width Fix */
+    .auth-input, input, select, textarea {
+        font-size: 1em !important;
+        padding: 12px !important;
+    }
+    
+    .auth-card {
+        padding: 25px !important;
+        margin-bottom: 20px !important;
+    }
+}
+/* Right side ki khali jagah (Overflow) ko jad se khatam karne ke liye */
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Yeh line right side bhagne wale content ko kaat degi */
+}
+
+/* Mobile Responsive Adjustments (360px standard screen fix) */
+@media (max-width: 768px) {
+    
+    /* Poore containers ko strictly mobile screen ke andar fit rakhne ke liye */
+    * {
+        box-sizing: border-box;
+    }
+    
+    .navbar, header, main, section, footer, div {
+        max-width: 100% !important;
+        width: 100% !important;
+    }
+
+    /* Main Header ka bada text screen se bahar na jaye */
+    .main-header h1 {
+        font-size: 2em !important;
+        word-wrap: break-word;
+    }
+
+    /* WhatsApp floating button ko screen ke andar rakhne ke liye */
+    .whatsapp-float {
+        right: 20px !important;
+        bottom: 20px !important;
     }
 }
