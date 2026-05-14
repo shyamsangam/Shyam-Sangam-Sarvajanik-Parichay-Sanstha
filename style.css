@@ -1802,28 +1802,30 @@ font-size: 1.2em;
    ========================================================================== */
 
 /* 1. LAPTOP SCREEN DESIGN (जब वेबसाइट कंप्यूटर/लैपटॉप पर खुलेगी) */
-@media (min-width: 769px) {
+
+   @media (min-width: 769px) {
+    /* 1. Purane navbar layout mein pure block ko thoda aur space dein */
     .navbar {
         display: flex !important;
-        flex-direction: row !important;
         justify-content: space-between !important;
         align-items: center !important;
-        flex-wrap: nowrap !important; /* Content neeche nahi girega */
-        padding: 10px 40px !important;
-        background-color: #660011 !important; /* Rich Maroon background */
-        width: 100% !important;
-        box-sizing: border-box !important;
+        padding: 10px 20px !important; /* Side ka padding thoda kam kiya taaki naye tabs ke liye jagah mile */
     }
 
+    /* 2. Beech ke saare tabs (Home se lekar Login tak) ke beech strict gap lagayein */
     .nav-links {
         display: flex !important;
-        flex-direction: row !important;
-        list-style: none !important;
-        gap: 25px !important; /* Tabs ke beech ka gap */
-        margin: 0 auto !important; /* Tabs ekdum center mein rahenge */
-        padding: 0 !important;
-        flex-wrap: nowrap !important;
+        gap: 15px !important; /* Pehle 25px tha, 15px karne se saare tabs ek line mein bina chipke set ho jayenge */
+        align-items: center !important;
     }
+
+    /* 3. Help aur Login ko alag-alag dikhane ke liye unke font ko thoda tight karein */
+    .nav-links a {
+        font-size: 0.95em !important; /* Font size halka sa chota karne se online bheed bilkul nahi dikhegi */
+        white-space: nowrap !important; /* Text ko do line mein tootne se rokega */
+    }
+   }
+
 
     .nav-auth {
         display: flex !important;
