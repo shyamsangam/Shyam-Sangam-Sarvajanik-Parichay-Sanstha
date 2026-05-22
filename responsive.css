@@ -1,0 +1,44 @@
+/* --- Mobile Responsive Styles --- */
+@media (max-width: 768px) {
+  /* Navbar ko column layout mein badlein */
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px 10px;
+    gap: 15px; /* Elements ke beech gap */
+    height: auto; /* Fixed height hatane ke liye */
+  }
+
+  /* Left empty div ko mobile par hide karein */
+  .nav-left {
+    display: none;
+  }
+
+  /* Nav links ko center karein aur failayein */
+  .nav-links {
+    display: flex;
+    flex-direction: row; /* Links ko ek line mein rakhne ke liye */
+    justify-content: center;
+    flex-wrap: wrap; /* Jagah kam hone par automatic niche aa jayein */
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+  }
+
+  /* Login aur Free Form buttons ko ek ke niche ek ya side-by-side set karein */
+  .nav-auth {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .login-btn, .submit-btn {
+    padding: 8px 15px;
+    font-size: 14px;
+    text-align: center;
+  }
+}
